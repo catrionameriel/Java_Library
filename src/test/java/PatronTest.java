@@ -19,6 +19,8 @@ public class PatronTest {
         aThirdBook = new Book("The Psychopath Test", "Jon Ronson");
         library = new Library("Anniesland");
         library.addBook(book);
+        library.addBook(aThirdBook);
+        library.addBook(anotherBook);
     }
 
     @Test
@@ -53,13 +55,13 @@ public class PatronTest {
 
     }
 
-//    @Test
-//    public void cannotBorrowTooManyBooks(){
-//        for (int i = 0; i < 6; i++) {
-//            patron.borrowBook(library, book);
-//        }
-//        assertEquals(4, patron.countBooks());
-//    }
+    @Test
+    public void cannotBorrowTooManyBooks(){
+        for (int i = 0; i < library.getBooks().size(); i++) {
+            patron.borrowBook(library, library.getBooks().get(i));
+        }
+        assertEquals(2, patron.countBooks());
+    }
 
 
 }

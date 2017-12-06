@@ -10,6 +10,10 @@ public class Library {
         stock = new ArrayList<>();
     }
 
+    public ArrayList<Book> getBooks(){
+        return this.stock;
+    }
+
 
     public int countStock() {
         return this.stock.size();

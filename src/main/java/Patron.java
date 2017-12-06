@@ -25,7 +25,8 @@ public class Patron {
     }
 
     public void borrowBook(Library library, Book book) {
-        if(this.countBooks() < this.getLoanMax());
-        this.loanedBooks.add(library.loanBook(book));
+        if(this.countBooks() < this.getLoanMax()) {
+            this.loanedBooks.add(library.loanBook(book));
+        }
     }
 }
